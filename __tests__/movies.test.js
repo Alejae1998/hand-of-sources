@@ -33,7 +33,7 @@ describe('movie routes', () => {
     ]);
   });
 
-  it.skip('/movies/:id should return the movie detail', async () => {
+  it('/movies/:id should return the movie detail', async () => {
     const resp = await request(app).get('/movies/1');
     expect(resp.status).toEqual(200);
     expect(resp.body).toEqual({
