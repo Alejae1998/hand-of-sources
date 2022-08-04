@@ -44,6 +44,19 @@ describe('movie routes', () => {
     });
   });
 
+  it('POST /movies should create a new movie', async () => {
+    const resp = await request(app).post('/movies').send({
+      name: 'Hunger Games',
+      director: 'Francis Lawrence',
+      genre: 'Fiction',
+    });
+    expect(resp.status).toEqual(200);
+    expect(resp.body.name).toEqual('Hunger Games');
+    expect(resp.body.director).toEqual('Francis Lawrence');
+    expect(resp.body.genre).toEqual('Fiction');
+    expect(resp.body.id).not.toBeUndefined();
+  });
+
   afterAll(() => {
     pool.end();
   });
