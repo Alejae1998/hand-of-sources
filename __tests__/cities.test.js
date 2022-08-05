@@ -53,17 +53,6 @@ describe('city routes', () => {
     const { body } = await request(app).get('/cities/');
     expect(body.length).toBeLessThan(3);
   });
-  it('POST should create a new society', async () => {
-    const resp = await request(app).post('/societies').send({
-      name: 'India',
-      year: '2500 bce',
-      continent: 'Asia',
-    });
-    expect(resp.status).toBe(200);
-    expect(resp.body.name).toEqual('India');
-    expect(resp.body.year).toEqual('2500 bce');
-    expect(resp.body.continent).toEqual('Asia');
-  });
 
   afterAll(() => {
     pool.end();
