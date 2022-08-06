@@ -3,17 +3,19 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 
-describe('classes route', () => {
+describe('game routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('GET should return a list of ffxiv classes', async () => {
-    const resp = await request(app).get('/classes');
-    expect(resp.status).toBe(200);
-    expect(resp.body[0].id).toBe('1');
+
+  it.skip('/games should return a list of games', async () => {
+    const resp = await request(app).get('/games');
+    expect(resp.status).toEqual(200);
+    expect(resp.body.length).toEqual(3);
   });
 
   afterAll(() => {
     pool.end();
   });
 });
+

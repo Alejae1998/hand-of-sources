@@ -4,6 +4,7 @@ DROP TABLE if exists movies;
 DROP TABLE if exists cities;
 DROP TABLE IF exists societies;
 DROP TABLE IF exists classes;
+DROP TABLE IF exists games;
 CREATE TABLE movies (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR NOT NULL,
@@ -73,3 +74,15 @@ VALUES
 ('Lancer', 'DPS'),
 ('Reaper', 'DPS'),
 ('Samurai', 'DPS');
+
+CREATE TABLE games (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    players INT NOT NULL,
+    genre VARCHAR NOT NULL
+);
+
+INSERT INTO games (name, players, genre) VALUES
+('tic tac toe', 2, 'paper and pencil'),
+('connect four', 2, 'board game'),
+('battleship', 2, 'board game');
