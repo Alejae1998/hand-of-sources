@@ -36,7 +36,7 @@ describe('game routes', () => {
     expect(resp.body.genre).toEqual('paper and pencil');
     expect(resp.body.id).not.toBeUndefined();
   });
-  it.skip('PUT /games/:id should update game', async () => {
+  it('PUT /games/:id should update game', async () => {
     const resp = await request(app)
       .put('/games/1')
       .send({ genre: 'tic-tac-toe' });
@@ -44,7 +44,7 @@ describe('game routes', () => {
     expect(resp.body.genre).toEqual('tic-tac-toe');
   });
 
-  it.skip('DELETE /games/:id should delete a game', async () => {
+  it('DELETE /games/:id should delete a game', async () => {
     const resp = await request(app).delete('/games/1');
     expect(resp.status).toEqual(200);
     expect(resp.body.id).toEqual('1');
