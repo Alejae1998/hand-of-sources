@@ -24,7 +24,7 @@ describe('game routes', () => {
       genre: 'paper and pencil',
     });
   });
-  it.skip('POST /games should create a new game', async () => {
+  it('POST /games should create a new game', async () => {
     const resp = await request(app).post('/games').send({
       name: 'dots and boxes',
       players: 2,
