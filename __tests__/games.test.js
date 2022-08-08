@@ -14,7 +14,7 @@ describe('game routes', () => {
     expect(resp.body.length).toEqual(3);
   });
 
-  it.skip('/games/:id should return the game detail', async () => {
+  it('/games/:id should return the game detail', async () => {
     const resp = await request(app).get('/games/1');
     expect(resp.status).toEqual(200);
     expect(resp.body).toEqual({
